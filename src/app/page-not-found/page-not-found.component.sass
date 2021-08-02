@@ -1,0 +1,44 @@
+@import '../../styles.sass'
+
+@mixin padLines($n)
+    height: $n*20 + 10px
+
+$textSize: 16px
+
+.host404
+    display: flex
+    margin: 82px auto 320px
+    padding: 0 160px
+    max-width: 460px
+    flex-direction: column
+    align-items: flex-start
+
+    .spacer
+        @include spacer
+
+    .n404-default
+        font-size: $textSize * 6
+        font-weight: 700
+        @include padLines(3)
+    
+    .oops-default
+        font-size: $textSize
+        text-transform: uppercase
+        @include padLines(1)
+
+    .msg-default
+        font-size: $textSize
+        font-variant: small-caps
+        @include padLines(4)
+
+    .back-default
+        @include padLines(1)
+        a
+            color: #1976d2
+            text-decoration: none
+            &:visited
+            &:hover
+                color: #2479be
+            &:before
+                content: "« "
+
