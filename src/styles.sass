@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+@mixin spacer($n: 1)
+    height: $n * 50px
+
+@mixin light-link()
+    color: #1976d2
+    text-decoration: none
+    &:visited
+    &:hover
+        color: #7479be
+
+@mixin content-host()
+    width: 80%

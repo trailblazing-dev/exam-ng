@@ -1,44 +1,49 @@
 @import '../../styles.sass'
 
+:host
+    @include content-host
+
 @mixin padLines($n)
     height: $n*20 + 10px
 
 $textSize: 16px
+$textHeight: 20px
 
 .host404
     display: flex
-    margin: 82px auto 320px
+    margin: 22px auto 22px
     padding: 0 160px
     max-width: 460px
     flex-direction: column
     align-items: flex-start
 
     .spacer
-        @include spacer
+        @include spacer(1)
+    
+    .line-break
+        @include spacer(0.5)
 
     .n404-default
         font-size: $textSize * 6
-        font-weight: 700
-        @include padLines(3)
-    
+        font-weight: 750
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+        color: #999
+        line-height: $textHeight * 6
+        box-sizing: border-box
+        -webkit-font-smoothing: antialiased
+        -moz-osx-font-smoothing: grayscale
+        
     .oops-default
         font-size: $textSize
         text-transform: uppercase
-        @include padLines(1)
 
     .msg-default
         font-size: $textSize
         font-variant: small-caps
-        @include padLines(4)
 
     .back-default
-        @include padLines(1)
         a
-            color: #1976d2
-            text-decoration: none
-            &:visited
-            &:hover
-                color: #2479be
+            @include light-link
             &:before
                 content: "« "
 
